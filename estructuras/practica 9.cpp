@@ -77,6 +77,8 @@ int main(){
 	
 	while(actual != NULL){
 		
+		printf("%d", aux->apu_sig->valor);
+		
 		if(actual->valor < aux->valor && aux->apu_sig->valor>aux->valor){
 			
 			aux->apu_sig = actual->apu_sig;
