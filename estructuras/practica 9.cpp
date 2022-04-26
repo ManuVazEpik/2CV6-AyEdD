@@ -77,7 +77,7 @@ int main(){
 	
 	while(actual != NULL){
 		
-		if(actual->valor < aux->valor){
+		if(actual->valor < aux->valor && aux->apu_sig->valor>aux->valor){
 			
 			aux->apu_sig = actual->apu_sig;
 			aux->apu_ant = actual;
