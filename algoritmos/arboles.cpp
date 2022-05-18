@@ -88,21 +88,23 @@ int main(){
 		printf("%d\n", recorrido->valor);
 		if(aux2!=NULL){
 			printf("%d", aux2->valor);
+		}else{
+			aux2 = recorrido->der;
 		}
 		
 		recorrido = recorrido->izq;
-		aux2 = recorrido->der;
+		
 		
 	}
 	
-	/*minimo = num/2;
-	tope = num-1;
-	mitad = (tope+minimo)/2;
+	minimo = (num-1)/2;//3
+	tope = num-1;//6
+	mitad = (tope+minimo)/2;//4
 	
-	while(tope=>minimo && minimo!=num-1){	
+	while(tope>=minimo && minimo!=num-1){	
 		
-		tope = mitad-1;
-		mitad = (tope+minimo)/2;
+		minimo = (tope+minimo)/2;//desde aqui 3-1=2    se repite n veces
+		mitad =mitad-1 ; //3+2=5/2=2
 		
 		aux = new(nodo);
 		aux->valor = arreglo[mitad];
@@ -111,10 +113,10 @@ int main(){
 		aux2->der=aux;
 		
 		
-		if(tope==min){
+		if(tope==minimo){
 		
 			aux = new(nodo);
-			aux->valor = arreglo[mitad+2];
+			aux->valor = arreglo[mitad-2];
 			aux->izq=NULL;
 			aux->der=NULL;
 			aux2->izq=aux;
@@ -122,8 +124,23 @@ int main(){
 		}
 		
 		aux2=aux;
-	}*/
+	}
 	
+	recorrido = raiz;
+	aux2 = recorrido->izq; 
+	
+	while(recorrido!=NULL){
+		
+		printf("%d\n", recorrido->valor);
+		if(aux2!=NULL){
+			printf("%d", aux2->valor);
+		}
+		
+		recorrido = recorrido->der;
+		aux2 = recorrido->izq;
+		
+	}
+
 }
 
 
